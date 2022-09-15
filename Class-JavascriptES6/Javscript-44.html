@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root">is good</div>
+
+    <script>
+      const root = document.getElementById("root");
+
+      console.log(typeof root);
+      console.dir(root);
+      let test = [];
+
+      //for/in - 객체의 프로퍼티에 접근
+      for (let key in root) {
+        // includes() = 배열이 특정요소를 포함하고 있는지 boolean 판별한다
+        if (key.includes("is") || key[0] === "i") {
+          test.push(key);
+        }
+      }
+
+      console.log(test);
+    </script>
+  </body>
+</html>
