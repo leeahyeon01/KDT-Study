@@ -19,6 +19,7 @@
       //for/in - 객체의 프로퍼티에 접근
       for (let key in root) {
         // includes() = 배열이 특정요소를 포함하고 있는지 boolean 판별한다
+        // is가 포함된 단어거나     i로 시작하거나 하면 test배열에 추가 해준다
         if (key.includes("is") || key[0] === "i") {
           test.push(key);
         }

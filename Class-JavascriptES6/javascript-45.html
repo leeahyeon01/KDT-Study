@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul {
+        list-style-type: none;
+      }
+
+      #root {
+        width: 100vw;
+        height: 100vh;
+        background-color: #333;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #root > ul {
+        width: 50%;
+        height: 50%;
+        background-color: #fff;
+      }
+      #root > ul > li:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <ul>
+        <li>list-1</li>
+        <li>list-2</li>
+        <li>list-3</li>
+        <li>list-4</li>
+        <li>list-5</li>
+        <li>list-6</li>
+        <li>list-7</li>
+        <li>list-8</li>
+        <li>list-9</li>
+        <li>list-10</li>
+      </ul>
+    </div>
+    <script>
+      // 이벤트객체 = '전달 받은 인자(arguments)'
+      // ** 이벤트가 일어난 객체(태그가 아닌)의 일부 데이터를 '추출(extracting)' 하는 기능
+      // addEventListener()의 콜백함수 0번째 매개변수는 이벤트가 일어난 객체 중 일부 데이터를 객체로 전달 받은 것 입니다.
+      const root = document.getElementById("root");
+      const ul = root.children[0];
+      console.log(ul);
+      const liItems = ul.children;
+      let status = true;
+
+      // (e) 이벤트 처리 함수
+      // event.target - target속성은 이벤트가 발생한 대상을 가르킨다
+      ul.addEventListener("click", e => {
+        console.log(e.target);
+        console.log(status);
+        //dataset -읽기 전용 속성은 요소의 사용자 지정 데이터 속성 ( )에 HTMLElement대한 읽기/쓰기 액세스를 제공합니다 .
+        console.log(e.target.dataset.listIndex);
+        if (status) {
+          e.target.style.backgroundColor = "cadetblue";
+          status = false;
+        } else {
+          e.target.style.backgroundColor = "#fff";
+          status = true;
+        }
+      });
+    </script>
+  </body>
+</html>
