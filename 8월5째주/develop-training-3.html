@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //root
+      const body = window.document.body;
+      const root = document.createElement("div");
+      //append & appendchild -부모노드에 자식노드를 추가 하는 메소드
+      body.appendChild(root);
+      root.style.width = "100vw";
+      root.style.height = "100vh";
+
+      // --------------------hearer-----------------------
+      const headerArray = [];
+      const litext =["shop","about","contact","account","search"]
+
+      function ForLI(){
+        for(let i = 0; i<litext.length; i++){
+          headerArray.push(`<li>${litext[i]}+ </li>`);
+        }
+        headerArray.push(`</ul>)
+      }
+    </script>
+  </body>
+</html>
