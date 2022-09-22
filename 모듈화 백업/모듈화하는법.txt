@@ -1,0 +1,9 @@
+npm init - package.json파일 생성 
+
+package.json - "type" : "module" 적기 
+
+index.html 파일에 모듈 js파일 연결  - <script type="module" src="./module/index.js" defer></script>
+
+
+메서드 에서 리터럴한것들을 제거 
+
